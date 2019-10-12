@@ -13,6 +13,10 @@ Modern web development with WordPress is complicated ... but not anymore
 
 [ list of disabled features with the option to be enabled ]
 
+### Resources
+
+[ list of resources that can be handy ]
+
 ## Main principles
 
 ### Decisions, not options
