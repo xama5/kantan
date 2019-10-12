@@ -1,6 +1,18 @@
 # Simple WordPress Boilerplate
 Modern web development with WordPress is complicated ... but not anymore
 
+## Features
+
+## Getting started
+
+[ layout of repository ]
+
+### Installation
+
+### Optimizations
+
+[ list of disabled features with the option to be enabled ]
+
 ## Main principles
 
 ### Decisions, not options
