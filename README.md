@@ -15,7 +15,7 @@ Modern web development with WordPress is complicated ... but not anymore
 
 ### Resources
 
-[ list of resources that can be handy ]
+[ list of tools/material that can be handy ]
 
 ## Main principles
 
