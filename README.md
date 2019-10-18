@@ -1,5 +1,5 @@
 # Simple WordPress Boilerplate
-Modern web development with WordPress is complicated ... but not anymore
+Modern web development with WordPress is complicated ...
 
 ## Features
 
