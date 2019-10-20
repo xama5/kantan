@@ -1,0 +1,35 @@
+# Usage: https://github.com/PrimeTimeCode/wp-plugin-activation-manifest#usage
+global:
+  enable:
+    - dashboard-cleanup/dashboard-cleanup.php
+    - delete-expired-transients/delete-expired-transients.php
+    - disable-attachment-pages/disable-attachment-pages.php
+    - disable-author-pages/disable-author-pages.php
+    - disable-emojis/disable-emojis.php
+    - disable-jquery-migrate/disable-jquery-migrate.php
+    - disable-post-via-email/disable-post-via-email.php
+    - disable-xml-rpc/disable-xml-rpc.php
+    - download-theme/download-theme.php
+    - header-cleanup/header-cleanup.php
+    - index-autoload/index-autoload.php
+    - limit-heartbeat/limit-heartbeat.php
+    - wordpress-seo/wp-seo.php
+    - soil/soil.php
+
+development:
+  enable:
+    - query-monitor/query-monitor.php
+    - wps/wps.php
+  disable:
+    - wordfence/wordfence.php
+    - w3-total-cache/w3-total-cache.php
+    - force-https/force-https.php
+    - minify-html/minify-html.php
+
+production:
+  enable:
+    - minify-html/minify-html.php
+    - wordfence/wordfence.php
+  disable:
+    - query-monitor/query-monitor.php
+    - wps/wps.php

@@ -1,0 +1,9 @@
+@import "test";
+
+.a {
+    background:red;
+
+    .b {
+        color: red;
+    }
+}

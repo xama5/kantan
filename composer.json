@@ -1,9 +1,9 @@
 {
-  "name": "roots/sage",
+  "name": "xama5/kantan",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "WordPress starter theme with a modern development workflow",
-  "homepage": "https://roots.io/sage/",
+  "description": "Minimal, yet powerful WordPress theme",
+  "homepage": "https://github.com/xama5/kantan",
   "authors": [
     {
       "name": "Ben Word",
@@ -19,16 +19,24 @@
       "name": "QWp6t",
       "email": "hi@qwp6t.me",
       "homepage": "https://github.com/qwp6t"
+    },
+    {
+      "name": "xama5",
+      "email": "contact@oliver.la",
+      "homepage": "https://github.com/xama5"
     }
   ],
-  "keywords": ["wordpress"],
-  "support": {
-    "issues": "https://github.com/roots/sage/issues",
-    "forum": "https://discourse.roots.io/"
-  },
   "autoload": {
     "psr-4": {
-      "App\\": "app/"
+      "Kantan\\": "Theme/Functions/"
+    }
+  },
+  "extra": {
+    "installer-paths": {
+      "plugins/{$name}/": [
+        "type:wordpress-plugin",
+        "type:wordpress-muplugin"
+      ]
     }
   },
   "require": {
@@ -36,16 +44,11 @@
     "composer/installers": "~1.0",
     "illuminate/support": "5.6.*",
     "roots/sage-lib": "~9.0.9",
-    "soberwp/controller": "~2.1.0"
+    "soberwp/controller": "~2.1.0",
+    "primetime/wp-plugin-activation-manifest": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8.0",
     "roots/sage-installer": "~1.6"
-  },
-  "scripts": {
-    "test": ["phpcs"],
-    "post-create-project-cmd": [
-      "Roots\\Sage\\Installer\\ComposerScript::postCreateProject"
-    ]
   }
 }
