@@ -1,21 +1,86 @@
-# Simple WordPress Boilerplate
-Modern web development with WordPress is complicated ...
+# Kantan - Simple and easy WordPress Starter Theme
+
+Modern web development with WordPress is too complicated ... let's simplify it!
+
+![kantan](Theme/screenshot.png)
 
 ## Features
 
+- Blade templates
+  - Create template files with blade (DRY)
+  - Create Gutenberg blocks with ACF and blade templates
+- **NO** local dveelopment environment needed
+- Edit the theme directly with the theme editor from WordPress
+- Use SASS, JS, and further supported file types and let your WordPress compile them on the fly! (similar to how Shopify does it)
+- Simple to understand
+- [Sage](https://github.com/roots/sage) like environment
+- Automatic enable/disable of plugins on different environments
+- Tons of optimizations for WordPress; for having a smoother and faster experience
+- Simple and intuitive to use, even my grandma could do it.
+
 ## Getting started
 
-[ layout of repository ]
+Grab a pre-packaged release under the Release tab of GitHub and basically extract it directly into your /wp-content/themes folder.
+
+The theme layout is basically the same as a Shopify theme. For more info click [here](https://help.shopify.com/en/themes/development/templates).
+
+It is designed to be edited directly in the theme editor of WordPress. Yes, you read that right.
+
+You'll see the following folder structure in the theme editor:
+
+- /Assets (put here your .scss, .js, etc)
+- /Blocks (Custom blocks for Gutenberg made with ACF)
+- /Config (you'll hardly ever need to edit the configuration, we might move this folder to a different directory later)
+- /Functions (any filters, functions, theme supports, etc. you may have)
+- /Layout (this defines the outer structure of your page.)
+- /Locales (any .mo, .po language files)
+- /Snippets (partial blade templates for use in templates)
+- /Templates (template files you know and love from WordPress)
+
+As you noticed, we're using Blade templates.
+
 
 ### Installation
 
 ### Optimizations
 
-[ list of disabled features with the option to be enabled ]
+There are pre-packaged plugins with this theme. Most are required, but some are optional. **This theme is designed to be used as a starter theme on a __fresh__ WordPress installation.**
+
+However, you can choose if you want to install them or not. There are also a bunch of constants you can define to disable certain optimizations.
+
+#### SEO
+
+- Yoast SEO
+- Disable Attachment Pages by LittleBizzy
+- Disable Author Pages by LittleBizzy
+
+#### Performance
+
+- W3 Total Cache (only production)
+- Dashboard Cleanup by LittleBizzy
+- Delete Expired Transients by LittleBizzy
+- Disable Emojis by LittleBizzy
+- Disable jQuery Migrate by LittleBizzy (heads up! this might cause issues with older plugins, disable it in this case)
+- Soil by Roots
+- Header Cleanup by LittleBizzy
+- Database speedup with Indices by LittleBizzy
+- Limit Heartbeat by LittleBizzy
+
+#### Security
+
+- Disable Post by E-Mail by LittleBizzy
+- Disable XML RPC by LittleBizzy
+- WordFence (only production)
+
+#### Misc
+
+- Download Theme as ZIP by LittleBizzy
+
 
 ### Resources
 
-[ list of tools/material that can be handy ]
+- This theme is based on Sage, head over to their documentation for advanced usage: https://roots.io/sage/docs
+- Here's a complete reference to plugins of LittleBizzy https://www.littlebizzy.com/plugins
 
 ## Main principles
 
