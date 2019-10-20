@@ -2,7 +2,7 @@
 
 Modern web development with WordPress is too complicated ... let's simplify it!
 
-![kantan](Theme/screenshot.png)
+<img src="Theme/screenshot.png" alt="kantan" width="400">
 
 ## Features
 
