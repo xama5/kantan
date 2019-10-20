@@ -18,7 +18,7 @@ Modern web development with WordPress is too complicated ... let's simplify it!
 - Tons of optimizations for WordPress; for having a smoother and faster experience
 - Simple and intuitive to use, even my grandma could do it.
 
-### Installation
+## Installation
 
 Grab a pre-packaged release under the Release tab of GitHub and basically extract it directly into your /wp-content/themes folder.
 
