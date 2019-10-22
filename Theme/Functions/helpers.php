@@ -82,7 +82,8 @@ function asset_path($asset)
 function filter_templates($templates)
 {
     $paths = apply_filters('kantan/filter_templates/paths', [
-        'Templates'
+        'Templates',
+        'Snippets'
     ]);
     $paths_pattern = "#^(" . implode('|', $paths) . ")/#";
 

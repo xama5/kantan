@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'compiled' => get_template_directory() . '/cache',
+    'compiled' => get_template_directory() . '/../cache',
 
 
     /*

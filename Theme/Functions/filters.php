@@ -62,23 +62,3 @@ add_filter('template_include', function ($template) {
     }
     return $template;
 }, PHP_INT_MAX);
-
-/**
- * Render comments.blade.php
- */
-add_filter('comments_template', function ($comments_template) {
-    $comments_template = str_replace(
-        [get_stylesheet_directory(), get_template_directory()],
-        '',
-        $comments_template
-    );
-
-    $theme_template = locate_template(["views/{$comments_template}", $comments_template]);
-
-    if ($theme_template) {
-        echo template($theme_template, []);
-        return get_stylesheet_directory().'/index.php';
-    }
-
-    return $comments_template;
-}, 100);
