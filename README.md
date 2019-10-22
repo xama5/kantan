@@ -18,9 +18,11 @@ Modern web development with WordPress is too complicated ... let's simplify it!
 - Tons of optimizations for WordPress; for having a smoother and faster experience
 - Simple and intuitive to use, even my grandma could do it.
 
-## Getting started
+## Installation
 
 Grab a pre-packaged release under the Release tab of GitHub and basically extract it directly into your /wp-content/themes folder.
+
+## Getting started
 
 The theme layout is basically the same as a Shopify theme. For more info click [here](https://help.shopify.com/en/themes/development/templates).
 
@@ -38,9 +40,6 @@ You'll see the following folder structure in the theme editor:
 - /Templates (template files you know and love from WordPress)
 
 As you noticed, we're using Blade templates.
-
-
-### Installation
 
 ### Optimizations
 
