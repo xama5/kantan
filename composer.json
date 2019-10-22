@@ -2,6 +2,7 @@
   "name": "xama5/kantan",
   "type": "wordpress-theme",
   "license": "MIT",
+  "version": "1.0",
   "description": "Minimal, yet powerful WordPress theme",
   "homepage": "https://github.com/xama5/kantan",
   "authors": [
@@ -26,16 +27,20 @@
       "homepage": "https://github.com/xama5"
     }
   ],
-  "autoload": {
-    "psr-4": {
-      "Kantan\\": "Theme/Functions/"
+  "repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/xama5/kantan-lib"
     }
-  },
+  ],
   "extra": {
     "installer-paths": {
       "plugins/{$name}/": [
         "type:wordpress-plugin",
         "type:wordpress-muplugin"
+      ],
+      "src/": [
+        "name:xama5/kantan-lib"
       ]
     }
   },
