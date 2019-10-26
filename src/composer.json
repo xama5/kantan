@@ -1,0 +1,12 @@
+{
+    "name": "xama5/kantan-lib",
+    "version": "1.0",
+    "description": "Required package for kantan theme",
+    "authors": [
+        {
+            "name": "xama5",
+            "email": "contact@oliver.la"
+        }
+    ],
+    "require": {}
+}

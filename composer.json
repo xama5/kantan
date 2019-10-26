@@ -27,30 +27,12 @@
       "homepage": "https://github.com/xama5"
     }
   ],
-  "repositories": [
-    {
-        "type": "git",
-        "url": "https://github.com/xama5/kantan-lib.git"
-    }
-  ],
-  "extra": {
-    "installer-paths": {
-      "plugins/{$name}/": [
-        "type:wordpress-plugin",
-        "type:wordpress-muplugin"
-      ],
-      "src/": [
-        "name:xama5/kantan-lib"
-      ]
-    }
-  },
   "require": {
     "php": ">=7.1",
     "composer/installers": "~1.0",
     "illuminate/support": "5.6.*",
     "roots/sage-lib": "~9.0.9",
     "soberwp/controller": "~2.1.0",
-    "primetime/wp-plugin-activation-manifest": "^1.0",
-    "xama5/kantan-lib": "^1.0"
+    "primetime/wp-plugin-activation-manifest": "^1.0"
   }
 }
