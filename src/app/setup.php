@@ -8,25 +8,29 @@ use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 
 /**
- * Theme setup
- */
-add_action('after_setup_theme', function () {
-    // Auto-manage activation of plugins
-    \PrimeTime\WordPress\PluginManifest\Activation::set(get_template_directory() . '/plugin-manifest.yml', WP_ENV);
-}, 20);
-
-/**
- * Updates the `$post` variable on each iteration of the loop.
- * Note: updated value is only available for subsequently loaded views, such as partials
- */
-add_action('the_post', function ($post) {
-    kantan('blade')->share('post', $post);
-});
-
-/**
  * Setup kantan options
  */
 add_action('after_setup_theme', function () {
+    /**
+     * Auto-manage activation of plugins
+     */
+    if (!defined('WP_ENV'))
+        define('WP_ENV', 'production');
+    \PrimeTime\WordPress\PluginManifest\Activation::set(get_template_directory() . '/plugin-manifest.yml', WP_ENV);
+
+    /**
+     * Flush Kantan Compiler Cache
+     * We're doing so by checking the Assets directory recursively for the most recently changed file.
+     */
+    $asset_files = glob(get_stylesheet_directory() . '/Assets{,/*}/*.*', GLOB_BRACE);
+    $asset_files = array_map('filemtime', $asset_files);
+    arsort($asset_files);
+    $mtime = current($asset_files);
+    if (get_option('kantan_asset_mtime', 0) < $mtime) {
+        do_action('kantan_compiler_flush_cache');
+        update_option('kantan_asset_mtime', $mtime);
+    }
+
     /**
      * Add Blade to kantan container
      */
@@ -45,19 +49,23 @@ add_action('after_setup_theme', function () {
     kantan('blade')->compiler()->directive('asset', function ($asset) {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
+}, 20);
+
+/**
+ * Updates the `$post` variable on each iteration of the loop.
+ * Note: updated value is only available for subsequently loaded views, such as partials
+ */
+add_action('the_post', function ($post) {
+    kantan('blade')->share('post', $post);
 });
 
-define('SIMPLE_WP_PLUGINS', json_decode(file_get_contents(get_template_directory() . '/plugins.json'), true));
-add_action( 'tgmpa_register', function() {
-    // Allow source to be in the format "fs:plugins/some-plugin.zip" so we don't have to add a fully qualified file path in the json file
-    // fs: is relative to this theme
-    $plugins = array_map(function($plugin) {
-        if (isset($plugin['source']) && strpos($plugin['source'], 'fs:') === 0) {
-            $plugin['source'] = get_template_directory() . '/' . substr($plugin['source'], 3);
-        }
-        return $plugin;
-    }, SIMPLE_WP_PLUGINS);
+/**
+ * Manage required and suggested plugins
+ */
+if (!defined('KANTAN_WP_PLUGINS'))
+    define('KANTAN_WP_PLUGINS', json_decode(file_get_contents(get_template_directory() . '/plugins.json'), true));
 
+add_action( 'tgmpa_register', function() {
     $config = [
         'id'           => 'kantan',             // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
@@ -71,10 +79,11 @@ add_action( 'tgmpa_register', function() {
 		'message'      => '',                      // Message to output right before the plugins table.
     ];
 
-    tgmpa( $plugins, $config );
+    tgmpa( KANTAN_WP_PLUGINS, $config );
 });
+
 add_filter('site_transient_update_plugins', function($value) {
-    foreach (SIMPLE_WP_PLUGINS as $plugin) {
+    foreach (KANTAN_WP_PLUGINS as $plugin) {
         if (@$plugin['update'] === false) {
             unset($value->response[$plugin['slug'] . '/' . $plugin['slug'] . '.php']);
         }
