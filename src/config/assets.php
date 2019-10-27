@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'uri' => get_theme_file_uri().'/Theme/Assets/',
+    'uri' => get_stylesheet_directory_uri() . '/Assets/',
 ];
