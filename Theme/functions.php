@@ -2,7 +2,7 @@
 
 namespace Kantan;
 
-require(get_stylesheet_directory() . '/../src/functions.php');
+require(get_template_directory() . '/../src/functions.php');
 
 /**
  * Define any constants here
