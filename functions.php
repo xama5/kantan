@@ -2,8 +2,6 @@
 
 namespace Kantan;
 
-require(get_template_directory() . '/../src/functions.php');
-
 /**
  * Define any constants here
  */
