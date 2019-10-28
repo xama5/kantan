@@ -15,10 +15,11 @@ global:
     - limit-heartbeat/limit-heartbeat.php
     - wordpress-seo/wp-seo.php
     - soil/soil.php
+    - kantan-core/kantan-core.php
+    - kantan-compiler/kantan-compiler.php
 
 development:
   enable:
-    - query-monitor/query-monitor.php
     - wps/wps.php
   disable:
     - wordfence/wordfence.php

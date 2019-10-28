@@ -132,8 +132,21 @@
         "update": false
     },
     {
-        "name": "AssetsMinify",
-        "slug": "assetsminify",
+        "name": "Kantan Core",
+        "slug": "kantan-core",
+        "source": "https://github.com/wp-kantan/kantan-core/archive/master.zip",
         "required": true
+    },
+    {
+        "name": "Kantan Compiler",
+        "slug": "kantan-compiler",
+        "source": "https://github.com/wp-kantan/kantan-compiler/archive/master.zip",
+        "required": true
+    },
+    {
+        "name": "GitHub Updater",
+        "slug": "github-updater",
+        "source": "https://github.com/afragen/github-updater/releases/download/8.9.0/github-updater-8.9.0.zip",
+        "required": false
     }
 ]
