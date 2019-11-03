@@ -120,7 +120,7 @@
     {
         "name": "Soil",
         "slug": "soil",
-        "source": "https://github.com/roots/soil/archive/3.8.1.zip",
+        "source": "https://github.com/roots/soil/archive/master.zip",
         "required": true,
         "update": false
     },
@@ -134,13 +134,13 @@
     {
         "name": "Kantan Core",
         "slug": "kantan-core",
-        "source": "https://github.com/wp-kantan/kantan-core/archive/master.zip",
+        "source": "https://github.com/wp-kantan/kantan-core/releases/latest/download/kantan-core.zip",
         "required": true
     },
     {
         "name": "Kantan Compiler",
         "slug": "kantan-compiler",
-        "source": "https://github.com/wp-kantan/kantan-compiler/archive/master.zip",
+        "source": "https://github.com/wp-kantan/kantan-compiler/releases/latest/download/kantan-compiler.zip",
         "required": true
     },
     {
