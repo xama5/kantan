@@ -15,93 +15,9 @@
         "required": true
     },
     {
-        "name": "Dashboard Cleanup",
-        "slug": "dashboard-cleanup",
-        "source": "https://github.com/littlebizzy/dashboard-cleanup/archive/1.1.2.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Disable XML-RPC",
-        "slug": "disable-xml-rpc",
-        "source": "https://github.com/littlebizzy/disable-xml-rpc/archive/1.1.1.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Limit Heartbeat",
-        "slug": "limit-heartbeat",
-        "source": "https://github.com/littlebizzy/limit-heartbeat/archive/1.1.0.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Disable Emojis",
-        "slug": "disable-emojis",
-        "source": "https://github.com/littlebizzy/disable-emojis/archive/1.2.0.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Index Autoload",
-        "slug": "index-autoload",
-        "source": "https://github.com/littlebizzy/index-autoload/archive/1.2.0.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Delete Expired Transients",
-        "slug": "delete-expired-transients",
-        "source": "https://github.com/littlebizzy/delete-expired-transients/archive/1.0.3.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Disable jQuery Migrate",
-        "slug": "disable-jquery-migrate",
-        "source": "https://github.com/littlebizzy/disable-jquery-migrate/archive/1.1.0.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Disable Author Pages",
-        "slug": "disable-author-pages",
-        "source": "https://github.com/littlebizzy/disable-author-pages/archive/1.1.0.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Download Theme",
-        "slug": "download-theme",
-        "source": "https://github.com/littlebizzy/download-theme/archive/1.0.0.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Disable Post Via Email",
-        "slug": "disable-post-via-email",
-        "source": "https://github.com/littlebizzy/disable-post-via-email/archive/1.0.0.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Disable Attachment Pages",
-        "slug": "disable-attachment-pages",
-        "source": "https://github.com/littlebizzy/disable-attachment-pages/archive/1.0.0.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Header Cleanup",
-        "slug": "header-cleanup",
-        "source": "https://github.com/littlebizzy/header-cleanup/archive/1.2.0.zip",
-        "required": true,
-        "update": false
-    },
-    {
-        "name": "Minify HTML",
-        "slug": "minify-html",
-        "source": "https://github.com/littlebizzy/minify-html/archive/1.0.1.zip",
+        "name": "Speed Demon",
+        "slug": "speed-demon",
+        "source": "https://github.com/littlebizzy/speed-demon/archive/1.4.0.zip",
         "required": true,
         "update": false
     },
@@ -120,13 +36,6 @@
         "update": false
     },
     {
-        "name": "Force SSL",
-        "slug": "force-https",
-        "source": "https://github.com/littlebizzy/force-https/archive/1.4.1.zip",
-        "required": false,
-        "update": false
-    },
-    {
         "name": "Kantan Core",
         "slug": "kantan-core",
         "source": "https://github.com/wp-kantan/kantan-core/releases/latest/download/kantan-core.zip",
@@ -142,6 +51,6 @@
         "name": "GitHub Updater",
         "slug": "github-updater",
         "source": "https://github.com/afragen/github-updater/releases/download/8.9.0/github-updater-8.9.0.zip",
-        "required": false
+        "required": true
     }
 ]
