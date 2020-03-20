@@ -3,6 +3,10 @@
 namespace Kantan;
 
 /**
+ * This file should not be edited, instead, edit config.php, actions.php and filters.php.
+ */
+
+/**
  * Kantan Core is required to correctly map the Kantan directories and compile blade templates.
  * Kantan Compiler should be installed, but is not required.
  */
