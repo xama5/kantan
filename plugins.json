@@ -10,11 +10,6 @@
         "required": true
     },
     {
-        "name": "Query Monitor",
-        "slug": "query-monitor",
-        "required": false
-    },
-    {
         "name": "Wordfence",
         "slug": "wordfence",
         "required": true
