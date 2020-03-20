@@ -7,7 +7,7 @@
     {
         "name": "Yoast SEO",
         "slug": "wordpress-seo",
-        "required": true
+        "required": false
     },
     {
         "name": "Wordfence",
