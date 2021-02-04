@@ -26,7 +26,9 @@ if (!class_exists('Roots\\Sage\\Container')) {
 require(KANTAN_SRC_DIRECTORY . '/app/helpers.php');
 require(KANTAN_SRC_DIRECTORY . '/app/setup.php');
 require(KANTAN_SRC_DIRECTORY . '/app/filters.php');
-require(KANTAN_SRC_DIRECTORY . '/app/compiler.php');
+if(defined('KANTAN_ENABLE_COMPILER') && KANTAN_ENABLE_COMPILER === true) {
+    require(KANTAN_SRC_DIRECTORY . '/app/compiler.php');
+}
 
 /**
  * Here's what's happening with these hooks:

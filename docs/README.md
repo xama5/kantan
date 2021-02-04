@@ -2,79 +2,60 @@
 
 Modern web development with WordPress is too complicated ... let's simplify it!
 
-<img src="screenshot.png" alt="kantan" width="400">
+<img src="../screenshot.png" alt="kantan" width="400">
 
 ## Features
 
 - Blade templates
-  - Create template files with blade (DRY)
+  - Create template files with blade
   - Create Gutenberg blocks with ACF and blade templates
-- **NO** local dveelopment environment needed
-- Edit the theme directly with the theme editor from WordPress
-- Use SASS, JS, and further supported file types and let your WordPress compile them on the fly! (similar to how Shopify does it)
-- Simple to understand
-- [Sage](https://github.com/roots/sage) like environment
-- Automatic enable/disable of plugins on different environments
-- Tons of optimizations for WordPress; for having a smoother and faster experience
-- Simple and intuitive to use, even my grandma could do it.
+- Directly edit and let your webserver compile on the fly:
+  - SCSS/SASS (autoprefix, compile to css, minify)
+  - JS (minify)
+- Combined JS and CSS: all assets are combined into a single file. (plugins included)
 
 ## Installation
 
-Grab a pre-packaged release under the Release tab of GitHub and basically extract it directly into your /wp-content/themes folder.
+You can either download the source code as ZIP or download kantan.zip from releases.
+Either zip can be directly installed, no composer needed, as all dependencies are bundled.
 
 ## Getting started
 
-The theme layout is basically the same as a Shopify theme. For more info click [here](https://help.shopify.com/en/themes/development/templates).
+Since this is a starter theme, you don't have to worry about updates. Simply start adding templates you need, and code away!
 
-It is designed to be edited directly in the theme editor of WordPress. Yes, you read that right.
+This is perfect if you want to upload your files via (S)FTP.
 
-You'll see the following folder structure in the theme editor:
+The repository contains the bare minimum to run a theme, inside functions.php you'll find that we preloaded a main.js and style.scss.
 
-- /Assets (put here your .scss, .js, etc)
-- /Blocks (Custom blocks for Gutenberg made with ACF)
-- /Config (you'll hardly ever need to edit the configuration, we might move this folder to a different directory later)
-- /Functions (any filters, functions, theme supports, etc. you may have)
-- /Layout (this defines the outer structure of your page.)
-- /Locales (any .mo, .po language files)
-- /partials (partial blade templates for use in templates)
-- /Templates (template files you know and love from WordPress)
+If you decide to use the on-the-fly compilation feature of kantan, you do not need to set up your local environment to compile your assets, kantan will do this for you on the webserver. Simply upload the updated style.scss and changes are detected automatically.
+You can also use the theme editor of wordpress to make changes to the .scss files, those will be detected as well.
 
-As you noticed, we're using Blade templates.
+Prefer to compile your assets locally and upload them yourself? No problem, just remove `define('KANTAN_ENABLE_COMPILER', true);` from the functions file. Or set the constant to `false`.
+Remember to adjust the paths too. The .scss extension only works if you enabled the compiler.
 
-### Optimizations
+### Optimization considerations
 
-There are pre-packaged plugins with this theme. Most are required, but some are optional. **This theme is designed to be used as a starter theme on a __fresh__ WordPress installation.**
-
-However, you can choose if you want to install them or not. There are also a bunch of constants you can define to disable certain optimizations.
+This theme will combine all resources in a single file (if the compiler is enabled), however, there are more optimizations one can do. Here are some recommendations from our side:
 
 #### SEO
 
-- Yoast SEO
-- Disable Attachment Pages by LittleBizzy
-- Disable Author Pages by LittleBizzy
+- RankMath
+- **Avoid** Yoast - as of now, yoast considerably slows down wordpress
 
-#### Performance
+#### Caching
 
-- W3 Total Cache (only production)
-- Dashboard Cleanup by LittleBizzy
-- Delete Expired Transients by LittleBizzy
-- Disable Emojis by LittleBizzy
-- Disable jQuery Migrate by LittleBizzy (heads up! this might cause issues with older plugins, disable it in this case)
-- Soil by Roots
-- Header Cleanup by LittleBizzy
-- Database speedup with Indices by LittleBizzy
-- Limit Heartbeat by LittleBizzy
+- Fastest Cache
+- W3 Total Cache
+
+#### Theme tweaks
+
+- Soil (move js to footer is NOT supported, as kantan already does this for you)
+- Disable emojis
+- Disable jquery migrate (and jquery if you don't need it)
 
 #### Security
 
-- Disable Post by E-Mail by LittleBizzy
-- Disable XML RPC by LittleBizzy
-- WordFence (only production)
-
-#### Misc
-
-- Download Theme as ZIP by LittleBizzy
-
+- WordFence
 
 ### Resources
 
@@ -91,23 +72,17 @@ This boilerplate ships with the bare minimum (in terms of functionality), to all
 
 ### To Gutenberg or not to Gutenberg
 
-The Gutenberg editor will be used in the following scenarios:
+The Gutenberg editor can be used in the following scenarios:
 
 - Blog posts
 
-It will **not** be used in these cases:
+It should **not** be used in these cases:
 
 - Regular pages
 - Most post types (e.g. post types for a team)
 
 Repeated content is generally to be placed in a custom post type. There's no point in building a team site using a block editor (such as Gutenberg, Visual Composer, etc.)
 Why? Imagine you're building a team page, and decide to use the same layout in a different place on your site. The day comes when you want to adjust the layout, and it isn't easily doable in plain CSS. You maybe start fidling around with jQuery and your content starts to flicker. Just to avoid having to repeat yourself in adjusting the layout in the block editor. There's a reason there are template files, and with using a block editor for everything - they become redundant.
-
-### Performance
-
-The modern WordPress is bloated with stuff to accomadate most users. However, many features aren't used by many users. Almost like a paradox. Thus, the site becomes more slow. (example: emojis, meta tags, ...)
-
-This boilerplate disables these features, and allows the user to re-enable them if they really need them.
 
 ### Simplicity
 
